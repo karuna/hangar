@@ -1,7 +1,7 @@
 pub static TEXT: &'static str = "{
   \"name\": \"rocket-hangar\",
   \"version\": \"1.0.0\",
-  \"description\": \"Rust web framework, using [Rocket](https://rocket.rs), [Diesel](https://diesel.rs), and [Yew](https://github.com/DenisKolodin/yew)\",
+  \"description\": \"Rust web framework, using [Rocket](https://rocket.rs), [Diesel](https://diesel.rs), and [stdweb](https://github.com/koute/stdweb)\",
   \"main\": \"index.js\",
   \"scripts\": {
     \"start-js\": \"parcel -d src/assets client/assets/application.js\",

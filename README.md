@@ -1,5 +1,5 @@
 # Hangar
-Rust web framework, using [Rocket](https://rocket.rs), [Diesel](https://diesel.rs), and [Yew](https://github.com/DenisKolodin/yew)
+Rust web framework, using [Rocket](https://rocket.rs), [Diesel](https://diesel.rs), and [stdweb](https://github.com/koute/stdweb)
 
 ## Installation
 - `git clone` this project
