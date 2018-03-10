@@ -1,4 +1,4 @@
-pub const DIRECTORIES: [&'static str; 18] = [
+pub const DIRECTORIES: [&'static str; 19] = [
     "client",
     "client/assets",
     "client/src",
@@ -15,6 +15,7 @@ pub const DIRECTORIES: [&'static str; 18] = [
     "src/view_models",
     "src/views",
     "src/views/pages",
+    "src/views/users",
     "tests",
     "tests/libs",
 ];

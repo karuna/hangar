@@ -26,6 +26,8 @@ fn main() {
 
     let matches = App::new("hangar")
         .version(env!("CARGO_PKG_VERSION"))
+        .author("Karuna Murti <karuna.murti@gmail.com>")
+        .setting(AppSettings::ArgRequiredElseHelp)
         .subcommand(build_subcommand)
         .subcommand(db_subcommand)
         .subcommand(new_subcommand)

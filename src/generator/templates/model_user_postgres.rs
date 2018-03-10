@@ -20,7 +20,7 @@ pub struct User {
     pub created_at: NaiveDateTime,
     pub updated_at: NaiveDateTime,
     pub access_token: Option<String>,
-    pub last_access: NaiveDateTime,
+    pub last_access: Option<NaiveDateTime>,
 }
 
 #[derive(Insertable, Serialize, Deserialize)]
@@ -58,15 +58,19 @@ impl User {
         let mut rand_gen = OsRng::new().expect(\"Couldn't make OsRng!\");
         let new_access_token = rand_gen.gen_ascii_chars().take(32).collect::<String>();
         self.access_token = Some(new_access_token.clone());
-        self.last_access = Utc::now().naive_utc();
+        self.last_access = Some(Utc::now().naive_utc());
         self.save_changes::<User>(conn)?;
         Ok(new_access_token)
     }
 
     pub fn has_valid_access_token(&self, access_token_timeout: Duration) -> bool {
         let latest_valid_date = Utc::now() - access_token_timeout;
-        if self.access_token.is_some() {
-            self.last_access > latest_valid_date.naive_utc()
+        if let Some(last_access) = self.last_access {
+            if self.access_token.is_some() {
+                last_access > latest_valid_date.naive_utc()
+            } else {
+                false
+            }
         } else {
             false
         }
@@ -110,10 +114,7 @@ impl NewUser {
 
         diesel::insert_into(users::table)
             .values(&new_user)
-            .execute(&***db);
-
-        users::dsl::users.filter(users::dsl::email.eq(&new_user.email))
-            .first::<User>(&***db)
+            .get_result::<User>(&***db)
     }
 }
 ";

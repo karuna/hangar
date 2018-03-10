@@ -28,12 +28,14 @@ lazy_static! {
         m.insert("src/libs/routes.rs", templates::libs_routes::TEXT);
         m.insert("src/libs/settings.rs", templates::libs_settings::TEXT);
         m.insert("src/models/mod.rs", templates::model_mod::TEXT);
-        m.insert("src/models/user.rs", templates::model_user::TEXT);
         m.insert("src/view_models/mod.rs", templates::view_models_mod::TEXT);
         m.insert("src/view_models/users.rs", templates::view_models_users::TEXT);
         m.insert("src/views/pages/404.html.tera", templates::html_404::TEXT);
         m.insert("src/views/pages/index.html.tera", templates::html_index::TEXT);
         m.insert("src/views/base_layout.html.tera", templates::html_base_layout::TEXT);
+        m.insert("src/views/users/show.html.tera", templates::html_users_show::TEXT);
+        m.insert("src/views/users/signin.html.tera", templates::html_users_signin::TEXT);
+        m.insert("src/views/users/signup.html.tera", templates::html_users_signup::TEXT);
         m.insert("src/views/macros.html.tera", templates::html_macros::TEXT);
         m.insert("src/handlers.rs", templates::handlers::TEXT);
         m.insert("src/lib.rs", templates::lib::TEXT);
@@ -57,6 +59,7 @@ lazy_static! {
 
     pub static ref SQLITE_TEMPLATES: HashMap<&'static str, &'static str> = {
         let mut m = HashMap::new();
+        m.insert("src/models/user.rs", templates::model_user::TEXT);
         m.insert("migrations/00000000000001_create_users/down.sql", templates::db_sqlite::DOWN);
         m.insert("migrations/00000000000001_create_users/up.sql", templates::db_sqlite::UP);
         m
@@ -64,6 +67,7 @@ lazy_static! {
 
     pub static ref MYSQL_TEMPLATES: HashMap<&'static str, &'static str> = {
         let mut m = HashMap::new();
+        m.insert("src/models/user.rs", templates::model_user::TEXT);
         m.insert("migrations/00000000000001_create_users/down.sql", templates::db_mysql::DOWN);
         m.insert("migrations/00000000000001_create_users/up.sql", templates::db_mysql::UP);
         m
@@ -71,6 +75,7 @@ lazy_static! {
 
     pub static ref POSTGRESQL_TEMPLATES: HashMap<&'static str, &'static str> = {
         let mut m = HashMap::new();
+        m.insert("src/models/user.rs", templates::model_user_postgres::TEXT);
         m.insert("migrations/00000000000000_diesel_initial_setup/down.sql", templates::db_postgresql::DOWN_00);
         m.insert("migrations/00000000000000_diesel_initial_setup/up.sql", templates::db_postgresql::UP_00);
         m.insert("migrations/00000000000001_create_users/down.sql", templates::db_postgresql::DOWN_01);

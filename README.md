@@ -2,18 +2,22 @@
 Rust web framework, using [Rocket](https://rocket.rs), [Diesel](https://diesel.rs), and [stdweb](https://github.com/koute/stdweb)
 
 ## Installation
-- `git clone` this project
-- copy `.env.local` to `.env`
-- modify `.env`
-- install diesel-cli `cargo install diesel-cli`
-- install cargo-web `cargo install cargo-web`
-- `rustup target add wasm32-unknown-emscripten`
-- create database and run migrations `diesel setup`
+- Make sure you have rust installed. Use [rustup](https://www.rustup.rs/) if you don't have rust installed.
+- Install rust nightly
+  `rustup install nightly`
+  `rustup default nightly`
+- Install diesel for database access
+  `cargo install diesel_cli`
+- Install this crate
+  `cargo install hangar`
+- Create new web application
+  `hangar new --name new_app --database sqlite --database-url db.sqlite`
+- Inside the generated web application foler do initial migration
+  `hangar db setup`
+  `hangar db print-schema > src/schema.rs`
+- Run the application
+  `cargo run`
+- In other terminal start assets packager
+  `npm run start-js`
+  `nmp run start-css`
 
-## Running
-### Server side
-- copy `Rocket.toml.example` to `Rocket.toml`
-- modify `Rocket.toml`
-- in server folder `cargo run`
-
-### Client side

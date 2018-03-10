@@ -24,12 +24,16 @@ pub mod libs_routes;
 pub mod libs_settings;
 pub mod model_mod;
 pub mod model_user;
+pub mod model_user_postgres;
 pub mod view_models_mod;
 pub mod view_models_users;
 pub mod html_404;
 pub mod html_base_layout;
 pub mod html_index;
 pub mod html_macros;
+pub mod html_users_show;
+pub mod html_users_signin;
+pub mod html_users_signup;
 
 pub mod handlers;
 pub mod lib;
