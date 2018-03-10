@@ -6,7 +6,6 @@ use std::io::prelude::*;
 use std::fs::{create_dir, DirBuilder, File};
 use std::path::{Path, PathBuf};
 use std::collections::hash_map::Iter;
-use std::process::Command;
 
 use new::Setting;
 use self::templates_list::*;
