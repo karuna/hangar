@@ -44,7 +44,7 @@ lazy_static! {
         m.insert(".gitignore", templates::gitignore::TEXT);
         m.insert("README.md", templates::readme_md::TEXT);
         m.insert("rustfmt.toml", templates::rustfmt_toml::TEXT);
-        m.insert("watch.sh"), templates::watch_sh::TEXT);
+        m.insert("watch.sh", templates::watch_sh::TEXT);
         m
     };
 
