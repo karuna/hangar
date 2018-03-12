@@ -1,7 +1,6 @@
 pub mod application_css;
 pub mod application_js;
 pub mod blank;
-pub mod dotenv;
 pub mod favicon_svg;
 pub mod gitignore;
 
@@ -9,6 +8,9 @@ pub mod controller_assets;
 pub mod controller_mod;
 pub mod controller_pages;
 pub mod controller_users;
+pub mod db_sqlite;
+pub mod db_mysql;
+pub mod db_postgresql;
 pub mod guards_mod;
 pub mod guards_sanitized_str;
 pub mod guards_user;
@@ -41,12 +43,10 @@ pub mod main;
 
 pub mod test_lib;
 
+pub mod dotenv;
 pub mod cargo_toml;
 pub mod package_json;
 pub mod readme_md;
 pub mod rocket_toml;
 pub mod rustfmt_toml;
-
-pub mod db_sqlite;
-pub mod db_mysql;
-pub mod db_postgresql;
+pub mod watch_sh;
