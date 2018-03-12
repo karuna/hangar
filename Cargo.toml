@@ -1,6 +1,6 @@
 [package]
 name = "hangar"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Karuna Murti <karuna.murti@gmail.com>"]
 description = "Unstable, use at your own risk. Rust web framework, using [Rocket](https://rocket.rs), [Diesel](https://diesel.rs), and [stdweb](https://github.com/koute/stdweb)"
 readme = "README.md"
