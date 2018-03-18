@@ -7,8 +7,8 @@ readme = "README.md"
 keywords = ["rocket", "diesel", "web", "framework"]
 categories = ["development-tools", "web-programming", "web-programming::http-server", "web-programming::http-client"]
 license = "MIT"
-homepage = "https://github.com/karuna/hangar"
-repository = "https://github.com/karuna/hangar"
+homepage = "https://hangar-project.org/"
+repository = "https://github.com/karuna/hangar/"
 
 [dependencies]
 clap = "2.30"
