@@ -12,7 +12,7 @@ Rust web framework, using [Rocket](https://rocket.rs), [Diesel](https://diesel.r
   `cargo install hangar`
 - Create new web application
   `hangar new --name new_app --database sqlite --database-url db.sqlite`
-- Inside the generated web application foler do initial migration
+- Inside the generated web application folder do initial migration
   `hangar db setup`
   `hangar db print-schema > src/schema.rs`
 - Run the application
