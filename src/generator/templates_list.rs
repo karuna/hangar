@@ -9,7 +9,7 @@ lazy_static! {
         m.insert("client/assets/application.js", templates::application_js::TEXT);
         m.insert("log/.gitkeep", templates::blank::TEXT);
         m.insert("migrations/.gitkeep", templates::blank::TEXT);
-        m.insert("src/api/mod.rs", templates::blank::TEXT);
+        m.insert("src/apis/mod.rs", templates::blank::TEXT);
         m.insert("src/assets/favicon.svg", templates::favicon_svg::TEXT);
         m.insert("src/controllers/assets_controller.rs", templates::controller_assets::TEXT);
         m.insert("src/controllers/mod.rs", templates::controller_mod::TEXT);

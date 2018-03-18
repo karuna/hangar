@@ -42,7 +42,7 @@ extern crate lettre;
 #[cfg(feature = \"email\")]
 extern crate native_tls;
 
-pub mod api;
+pub mod apis;
 pub mod controllers;
 pub mod guards;
 pub mod handlers;

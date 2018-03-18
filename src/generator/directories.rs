@@ -6,7 +6,7 @@ pub const DIRECTORIES: [&'static str; 19] = [
     "migrations",
     "migrations/00000000000001_create_users",
     "src",
-    "src/api",
+    "src/apis",
     "src/assets",
     "src/controllers",
     "src/guards",
