@@ -1,3 +1,9 @@
+# Version 0.0.4 (2018-03-18)
+- Make `api` plural
+- Make url case insensitive
+- Fix typo in README
+- Add url to project website
+
 # Version 0.0.3 (2018-03-12)
 - Added `watch.sh` to reload server automatically
 
