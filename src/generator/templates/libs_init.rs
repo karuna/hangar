@@ -17,6 +17,10 @@ use controllers::assets_controller;
 
 pub fn init_rocket(rocket: Rocket) -> Rocket {
     let attached_rocket = rocket
+        .attach(AdHoc::on_request(|req, _| {
+            let new_uri = req.uri().as_str().to_lowercase();
+            req.set_uri(new_uri);
+        }))
         .attach(AdHoc::on_attach(|rocket| {
             let generated_rocket = setup_state(rocket);
             Ok(generated_rocket)
