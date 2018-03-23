@@ -12,7 +12,7 @@ use rocket::{Outcome, Request, State};
 /// ## Database support
 /// This helper is using [r2d2](https://crates.io/crates/r2d2) connection pool.
 ///
-/// This helper can support all adapter that implement `r2d2`'s [ManageConnection](https://docs.rs/r2d2/0.8.2/r2d2/trait.ManageConnection.html) trait.
+/// This helper can support all adapter that implement `r2d2`'s [`ManageConnection`](https://docs.rs/r2d2/0.8.2/r2d2/trait.ManageConnection.html) trait.
 ///
 /// You can see the list supported of adapter here: [https://github.com/sfackler/r2d2](https://github.com/sfackler/r2d2)
 pub struct Conn<T>

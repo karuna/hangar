@@ -32,7 +32,7 @@ impl<'a, 'r> FromRequest<'a, 'r> for CurrentUser {
             .cookies()
             .get_private(CURRENT_USER_STR)
             .and_then(|cookie| cookie.value().parse().ok())
-            .map(|id| CurrentUser(id))
+            .map(CurrentUser)
             .or_forward(())
     }
 }

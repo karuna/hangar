@@ -42,13 +42,13 @@ impl Mailer {
         if !mailer_config.contains_key(transport_key)
             || !mailer_config.get(transport_key).unwrap().is_str()
         {
-            return generate_stub_email_transport();
+            generate_stub_email_transport()
         } else {
             match unwrap_str(mailer_config, transport_key) {
-                \"file\" => return generate_file_email_transport(&mailer_config),
-                \"sendmail\" => return generate_sendmail_transport(&mailer_config),
-                \"smtp\" => return generate_smtp_transport(&mailer_config),
-                _ => return generate_stub_email_transport(),
+                \"file\" => generate_file_email_transport(mailer_config),
+                \"sendmail\" => generate_sendmail_transport(mailer_config),
+                \"smtp\" => generate_smtp_transport(mailer_config),
+                _ => generate_stub_email_transport(),
             }
         }
     }
@@ -95,7 +95,7 @@ fn generate_client_security(
         Ok(ClientSecurity::None)
     } else {
         match generate_tls_parameter(domain) {
-            Err(e) => return Err(format!(\"Failed to generate tls_parameters: {:?}\", e)),
+            Err(e) => Err(format!(\"Failed to generate tls_parameters: {:?}\", e)),
             Ok(tls_param) => match unwrap_str(mailer_config, security_key) {
                 \"required\" => Ok(ClientSecurity::Required(tls_param)),
                 \"wrapper\" => Ok(ClientSecurity::Wrapper(tls_param)),

@@ -109,7 +109,7 @@ impl NewUser {
 
         let new_user = NewUser {
             email: user_data.email.clone().unwrap(),
-            encrypted_password: encrypted_password,
+            encrypted_password,
         };
 
         diesel::insert_into(users::table)

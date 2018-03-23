@@ -113,14 +113,12 @@ impl Settings {
             log_level: level,
         };
 
-        let settings = Settings {
+        Settings {
             application_security,
             assets,
             database,
             our_logger,
-        };
-
-        settings
+        }
     }
 }
 

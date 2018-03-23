@@ -61,12 +61,10 @@ fn setup_state(rocket: Rocket) -> Rocket {
     let loggable_rocket = assetable_rocket.manage(combined_logger);
 
     if cfg!(feature = \"email\") {
-        let rocket_with_email = match set_mailer_config(&local_config) {
+        match set_mailer_config(&local_config) {
             Ok(mailer) => loggable_rocket.manage(mailer),
             Err(_) => loggable_rocket,
-        };
-
-        rocket_with_email
+        }
     } else {
         loggable_rocket
     }
