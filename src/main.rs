@@ -14,6 +14,7 @@ mod help;
 mod new;
 mod run;
 mod generator;
+mod watch;
 
 fn main() {
     let args = generate_args();
